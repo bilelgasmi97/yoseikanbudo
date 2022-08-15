@@ -1,0 +1,104 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Update User</h1>
+
+<div mat-dialog-content>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Name</span>  
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.user_name" name="nom_eq" 
+        placeholder="data Name" 
+        [value]="data.user_name">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Cote </span>
+        <input type="text" class="form-control"
+         aria-label="Amount (to the nearest dollar)" 
+         [(ngModel)]="data.user_lastname" name="cote"
+          placeholder="Product Price"
+          [value]="data.user_lastname">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Image</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.user_email" name="precident_eq"
+         placeholder="Precident"
+         [value]="data.user_email">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">email</span>
+        <input type="text" class="form-control"
+         [(ngModel)]="data.user_password" name="email"
+          placeholder="Product image"
+          [value]="data.user_password">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">fax</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.user_type" name="fax"
+         placeholder="Product image"
+         [value]="data.user_type">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">phone</span>
+        <input type="text" class="form-control"
+         [(ngModel)]="data.user_team" name="phone"
+          placeholder="Product image"
+          [value]="data.user_team">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">entraineur</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.user_birthday" name="entraineur" 
+        placeholder="Coach"
+        [value]="data.user_birthday">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">papier</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.date_created" name="papier"
+         placeholder="Product image"
+         [value]="data.date_created">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">remarque</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.user_phone" name="remarque" 
+        placeholder="Remarques"
+        [value]="data.user_phone">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">remarque</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.Adresse" name="remarque" 
+        placeholder="Remarques"
+        [value]="data.Adresse">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">remarque</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.Lieu_naiss" name="remarque" 
+        placeholder="Remarques"
+        [value]="data.Lieu_naiss">
+    </div>
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Update</button>
+</mat-dialog-actions>
+
+
+</form>
+
+
+

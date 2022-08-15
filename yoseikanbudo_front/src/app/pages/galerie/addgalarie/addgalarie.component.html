@@ -1,0 +1,40 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add Product</h1>
+<div mat-dialog-content>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">description</span>
+        <input type="text" class="form-control" [(ngModel)]="galary.description" name="description" placeholder="description" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text"> Path </span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" [(ngModel)]="galary.path" name="path" placeholder="path">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text"> type </span>
+        <input type="text" class="form-control" [(ngModel)]="galary.type" name="type" placeholder="type">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"> Date </span>
+        <input type="text" class="form-control" [(ngModel)]="galary.dt" name="dt" placeholder="Date">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"> categorie </span>
+        <input type="text" class="form-control" [(ngModel)]="galary.categorie" name="categorie" placeholder="Categorie">
+    </div>
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+
+

@@ -1,0 +1,57 @@
+<button class="addbtn" mat-fab color="primary" (click)="openDialog()" aria-label="Example icon button with a menu icon">
+   
+    <mat-icon>add</mat-icon>
+  </button> 
+
+<div class="chat-message">
+    <div class="chat-menu">
+        <div class="search-wrapper">
+            <input type="text">
+        </div>
+        
+            <mat-selection-list #shoes [multiple]="false">
+                <mat-list-option *ngFor="let user of users" [value]="user.user_id" [value]="user.user_lastname">
+                    <div class="friends">
+                        <img src="./assets/admin.jpg" width="40px" height="40px" alt="">
+                        <ul class="friends-data">
+                            <li class="head">
+                                {{user.user_name }}
+                                {{user.user_lastname }}
+                            </li>
+                            <li>
+                                <span>hi how are u !!!</span>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </mat-list-option>
+              </mat-selection-list>
+        
+        
+    </div>
+    <div class="chat-box">
+        <div class="chat-box-header">
+            <img src="./assets/admin.jpg" width="40px" height="40px" alt="">
+            <ul>
+                <li>
+                    {{shoes.selectedOptions.selected[0]?.value}}
+                </li>
+                <li>
+                    <span>3 hours ago</span> 
+                </li>
+            </ul> 
+            
+        </div>
+        <div class="chat-box-message">
+            <div class="box-message">
+                Option selected: {{shoes.selectedOptions.selected[0]?.value}}
+            </div>
+            
+        </div>
+        <div class="action" >
+            <mat-icon color="primary">send</mat-icon>
+            <input type="text" placeholder="send message !!!">
+
+        </div>
+    </div>
+</div>

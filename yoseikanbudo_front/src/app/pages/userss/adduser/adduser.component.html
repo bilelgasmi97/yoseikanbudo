@@ -1,0 +1,60 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add Product</h1>
+
+<div mat-dialog-content>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Name</span>  
+        <input type="text" class="form-control" [(ngModel)]="user.user_name" name="user_name" placeholder="user Name" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Lastname</span>
+        <input type="number" class="form-control"  [(ngModel)]="user.user_lastname" name="user_lastname" placeholder="Product Price">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Image</span>
+        <input type="text" class="form-control" [(ngModel)]="user.user_email" name="user_email" placeholder="Email">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">email</span>
+        <input type="text" class="form-control" [(ngModel)]="user.user_password" name="user_password" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">fax</span>
+        <input type="text" class="form-control" [(ngModel)]="user.user_birthday" name="user_birthday" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">phone</span>
+        <input type="text" class="form-control" [(ngModel)]="user.date_created" name="date_created" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">entraineur</span>
+        <input type="text" class="form-control" [(ngModel)]="user.user_phone" name="user_phone" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">papier</span>
+        <input type="text" class="form-control" [(ngModel)]="user.Adresse" name="Adresse" placeholder="Adresse">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">remarque</span>
+        <input type="text" class="form-control" [(ngModel)]="user.Lieu_naiss" name="Lieu_naiss" placeholder="Product image">
+    </div>
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+
+

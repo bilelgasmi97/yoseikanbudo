@@ -1,0 +1,28 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add Product</h1>
+<div mat-dialog-content>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Name</span>
+        <input type="text" class="form-control" [(ngModel)]="product.product_name" name="product_name" placeholder="Product Name" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" [(ngModel)]="product.product_prix" name="product_prix" placeholder="Product Price">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Image</span>
+        <input type="text" class="form-control" [(ngModel)]="product.product_image" name="product_image" placeholder="Product image">
+    </div>
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

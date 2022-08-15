@@ -1,0 +1,50 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add Product</h1>
+<div mat-dialog-content>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Title</span>  
+        <input type="text" class="form-control" [(ngModel)]="news.news_title" name="news_title" placeholder="news Name" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Details</span>
+        <input type="text" class="form-control"  [(ngModel)]="news.detail" name="detail" placeholder="Product Price">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Date</span>
+        <input type="text" class="form-control" [(ngModel)]="news.news_date" name="news_date" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Picture</span>
+        <input type="text" class="form-control" [(ngModel)]="news.pic" name="pic" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Thumbnails</span>
+        <input type="text" class="form-control" [(ngModel)]="news.pic_thumb" name="pic_thumb" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Type</span>
+        <input type="number" class="form-control" [(ngModel)]="news.type_fav" name="type_fav" placeholder="Product image">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">categorie</span>
+        <input type="text" class="form-control" [(ngModel)]="news.categorie" name="categorie" placeholder="Product image">
+    </div>
+
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+
