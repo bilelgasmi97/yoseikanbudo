@@ -1,0 +1,53 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Update Product</h1>
+<div mat-dialog-content>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">description</span>
+        <input type="text" class="form-control" [(ngModel)]="data.description"
+         name="description" placeholder="description"
+         [value]="data.description" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text"> Path </span>
+        <input type="text" class="form-control"  [(ngModel)]="data.path" name="path"
+         placeholder="path"
+         [value]="data.path">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text"> type </span>
+        <input type="text" class="form-control"
+         [(ngModel)]="data.type" name="type"
+         placeholder="type"
+         [value]="data.type">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"> Date </span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.dt" name="dt" placeholder="Date"
+        [value]="data.dt">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"> categorie </span>
+        <input type="text" class="form-control"
+         [(ngModel)]="data.categorie" name="categorie"
+          placeholder="Categorie"
+          [value]="data.categorie">
+    </div>
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+
+
+

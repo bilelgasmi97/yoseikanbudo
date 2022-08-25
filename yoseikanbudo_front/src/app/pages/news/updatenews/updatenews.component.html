@@ -1,0 +1,73 @@
+<form  (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Update Product</h1>
+<div mat-dialog-content>
+
+  <div class="input-group mb-3">
+      <span class="input-group-text">Name</span>  
+      <input type="text" class="form-control"     
+      [(ngModel)]="data.news_title" name="news_title" 
+      placeholder="data Name" 
+      [value]="data.news_title">
+  </div>
+  <div class="input-group mb-3">
+      <span class="input-group-text">Cote </span>
+      <input type="text" class="form-control"
+       aria-label="Amount (to the nearest dollar)" 
+       [(ngModel)]="data.detail" name="cote"
+        placeholder="Product Price"
+        [value]="data.detail">
+  </div>
+  <div class="input-group mb-3">
+      <span class="input-group-text">Image</span>
+      <input type="text" class="form-control" 
+      [(ngModel)]="data.news_date" name="news_date"
+       placeholder="Precident"
+       [value]="data.news_date">
+  </div>
+
+  <div class="input-group mb-3">
+      <span class="input-group-text">email</span>
+      <input type="text" class="form-control"
+       [(ngModel)]="data.pic" name="pic"
+        placeholder="Product image"
+        [value]="data.pic">
+  </div>
+
+  <div class="input-group mb-3">
+      <span class="input-group-text">fax</span>
+      <input type="text" class="form-control" 
+      [(ngModel)]="data.pic_thumb" name="pic_thumb"
+       placeholder="Product image"
+       [value]="data.pic_thumb">
+  </div>
+
+  <div class="input-group mb-3">
+      <span class="input-group-text">phone</span>
+      <input type="text" class="form-control"
+       [(ngModel)]="data.type_fav" name="type_fav"
+        placeholder="Product image"
+        [value]="data.type_fav">
+  </div>
+
+  <div class="input-group mb-3">
+      <span class="input-group-text">entraineur</span>
+      <input type="text" class="form-control" 
+      [(ngModel)]="data.categorie" name="categorie" 
+      placeholder="Coach"
+      [value]="data.categorie">
+  </div>
+
+ 
+ <!--  <div class="input-group mb-3">
+      <input type="file" class="form-control"   id="inputGroupFile01">
+  </div> -->
+</div>
+<mat-dialog-actions>
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Update</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

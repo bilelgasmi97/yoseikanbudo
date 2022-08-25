@@ -1,0 +1,86 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Update Product</h1>
+<div mat-dialog-content>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Name</span>  
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.nom_eq" name="nom_eq" 
+        placeholder="data Name" 
+        [value]="data.nom_eq">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Cote </span>
+        <input type="text" class="form-control"
+         aria-label="Amount (to the nearest dollar)" 
+         [(ngModel)]="data.cote" name="cote"
+          placeholder="Product Price"
+          [value]="data.cote">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Image</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.precident_eq" name="precident_eq"
+         placeholder="Precident"
+         [value]="data.precident_eq">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">email</span>
+        <input type="text" class="form-control"
+         [(ngModel)]="data.email" name="email"
+          placeholder="Product image"
+          [value]="data.email">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">fax</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.fax" name="fax"
+         placeholder="Product image"
+         [value]="data.fax">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">phone</span>
+        <input type="text" class="form-control"
+         [(ngModel)]="data.phone" name="phone"
+          placeholder="Product image"
+          [value]="data.phone">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">entraineur</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.entraineur" name="entraineur" 
+        placeholder="Coach"
+        [value]="data.entraineur">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">papier</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.papier" name="papier"
+         placeholder="Product image"
+         [value]="data.papier">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">remarque</span>
+        <input type="text" class="form-control" 
+        [(ngModel)]="data.remarque" name="remarque" 
+        placeholder="Remarques"
+        [value]="data.remarque">
+    </div>
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Update</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

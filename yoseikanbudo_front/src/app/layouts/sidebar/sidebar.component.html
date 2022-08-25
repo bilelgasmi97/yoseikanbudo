@@ -1,0 +1,55 @@
+<div class="sidebar-brand"  [routerLink]="['/admin/dashboard']">
+    <img src="./assets/YB_Logo.png" width="50px" alt="">
+    <h1><span></span>Yoseikanbudo</h1>
+</div>
+<div class="sidebar-menu">
+    <ul>
+        <li>
+            <a [routerLink]="['/admin/dashboard']" routerLinkActive="active" >
+                <span class="las la-igloo"></span>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/admin/members']" routerLinkActive="active">
+                <span class="las la-users"></span>
+                <span>Members</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/admin/tournois']" routerLinkActive="active">
+                <span class='bx bx-trophy'></span>
+                <span>Tournois</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/admin/products']" routerLinkActive="active">
+                <span class="las la-shopping-bag"></span>
+                <span>Products</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/admin/galary']" routerLinkActive="active">
+                <span class="las la-receipt"></span>
+                <span>Galery</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/admin/users']" routerLinkActive="active">
+                <span class="las la-user-circle"></span>
+                <span>Accounts</span>
+            </a>
+        </li>
+        <li>
+            <a  routerLinkActive="active" [routerLink]="['/admin/activites']">
+                <span class="las la-clipboard-list"></span>
+                <span>Activites</span>
+            </a>
+        </li> 
+    </ul>
+    
+</div>
+<div class="sidebar-footer">
+    <span>Dark Mode</span>
+    <mat-slide-toggle class="mode-btn"  (toggleChange)="switchmode()"></mat-slide-toggle>
+</div>
