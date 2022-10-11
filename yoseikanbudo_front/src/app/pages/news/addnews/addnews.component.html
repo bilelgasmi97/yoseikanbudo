@@ -1,0 +1,56 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add News</h1>
+<div mat-dialog-content>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Title  </mat-label>
+        <input matInput [(ngModel)]="news.news_title" name="news_title">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Detail  </mat-label>
+        <input matInput [(ngModel)]="news.detail" name="detail">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   news_date  </mat-label>
+        <input matInput [(ngModel)]="news.news_date" name="news_date">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Picture  </mat-label>
+        <input matInput [(ngModel)]="news.pic" name="pic">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   pic_thumb  </mat-label>
+        <input matInput [(ngModel)]="news.pic_thumb" name="pic_thumb">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Type  </mat-label>
+        <input matInput [(ngModel)]="news.type_fav" name="type_fav">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Categorie  </mat-label>
+        <input matInput [(ngModel)]="news.categorie" name="categorie">
+    </mat-form-field>
+
+
+
+    
+
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

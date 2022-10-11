@@ -1,0 +1,31 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title class="text-center">Send Mail</h1>
+<div mat-dialog-content>
+
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Recipient</span>
+        <input type="text" class="form-control" [(ngModel)]="maildetails.recipient" name="recipien" placeholder="Recipient Name" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Body</span>
+        <input type="text" class="form-control"  [(ngModel)]="maildetails.msgBody" name="msgBody" placeholder="MSG Body">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Subject</span>
+        <input type="text" class="form-control" [(ngModel)]="maildetails.subject" name="subject" placeholder="Subject">
+    </div>
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" [(ngModel)]="maildetails.attachment" name="attachment"  id="attachement"  (change)="getimagepath($event)">
+    </div> 
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Send</button>
+</mat-dialog-actions>
+
+
+</form>
+
+
+

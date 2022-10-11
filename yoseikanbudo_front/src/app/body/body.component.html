@@ -1,0 +1,50 @@
+<mat-sidenav-container [ngClass]="ms.str">
+    <mat-sidenav #sidebar mode="side" opened="">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <div class="toolbar">
+                <mat-toolbar>
+                    <mat-icon (click)="sidebar.toggle()">menu</mat-icon> 
+                    <div class="search-wrapper">
+                        <span class="las la-search"></span>
+                        <input type="search" name="" id="" placeholder="Search Here">
+                    </div>
+
+                    <div class="tools-wrapper">
+                        <button mat-mini-fab [routerLink]="['/admin/chat']" style="background-color:var(--orange-color)">
+                            <mat-icon matBadge="15" matBadgeColor="warn">message</mat-icon>
+                        </button>
+                        <button mat-mini-fab style="background-color:var(--orange-color)">
+                            <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+                        </button>
+                    </div>
+
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <div class="user-wrapper">
+                            <img src="./assets/admin.jpg" alt="" width="40px" height="40px"> 
+                            <div >
+                                <h4>{{auth.namr}}</h4>
+                                <small>Super Admin</small>
+                            </div>
+                        </div>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>Item 1</button>
+                        <button mat-menu-item>Settings <mat-icon>build</mat-icon> </button>
+                        <button mat-menu-item (click)="logout()"> LogOut    <mat-icon>exit_to_app</mat-icon> </button>
+                    </mat-menu>
+
+
+
+
+                </mat-toolbar>
+            </div>
+            <div class="main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

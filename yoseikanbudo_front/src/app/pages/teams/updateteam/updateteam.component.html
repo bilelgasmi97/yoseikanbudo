@@ -1,0 +1,69 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Update Product</h1>
+<div mat-dialog-content>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Name </mat-label>
+        <input matInput [(ngModel)]="data.nom_eq" name="tournois.nom_eq">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Cote </mat-label>
+        <input matInput [(ngModel)]="data.cote" name="tournois.cote">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Precident </mat-label>
+        <input matInput [(ngModel)]="data.precident_eq" name="tournois.precident_eq">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Email </mat-label>
+        <input matInput [(ngModel)]="data.email" name="tournois.email">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Fax </mat-label>
+        <input matInput [(ngModel)]="data.fax" name="tournois.fax">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Phone </mat-label>
+        <input matInput [(ngModel)]="data.phone" name="tournois.phone">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label> Coach</mat-label>
+        <mat-select  [(ngModel)]="data.entraineur" name="entraineur">
+            <mat-option  *ngFor="let coac of coachs"   [value]="coac" > {{coac.nom}} </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Papier </mat-label>
+        <input matInput [(ngModel)]="data.papier" name="tournois.papier">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > Reamrque </mat-label>
+        <input matInput [(ngModel)]="data.remarque" name="tournois.remarque">
+    </mat-form-field>
+
+
+
+    
+
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Update</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

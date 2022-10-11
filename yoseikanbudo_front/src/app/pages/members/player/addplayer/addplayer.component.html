@@ -1,0 +1,63 @@
+<form  (ngSubmit)="OnSubmit()">
+    <h1 mat-dialog-title class="text-center">Add player</h1>
+<div mat-dialog-content>
+
+
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  player FirstName  </mat-label>
+        <input matInput [(ngModel)]="player.name" name="name">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  player LastName  </mat-label>
+        <input matInput  [(ngModel)]="player.prenom" name="prenom">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label> Player Date Of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" format="dd-MM-yy" [(ngModel)]="player.date_naissance" name="date_naissance">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <div class="input-group mb-3">
+    
+        <mat-form-field  appearance="outline">
+        <mat-label> Player Team</mat-label>
+        <mat-select  [(ngModel)]="player.equipe" name="equipe">
+            <mat-option  *ngFor="let ut of teams"   [value]="ut" > {{ut.nom_eq}} </mat-option>
+        </mat-select>
+        
+        </mat-form-field>
+     
+    </div>
+
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  player Address  </mat-label>
+        <input matInput  [(ngModel)]="player.adresse" name="adresse">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > player Phone Number  </mat-label>
+        <input matInput  type="tel" [(ngModel)]="player.phone" name="phone">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > player Email  </mat-label>
+        <input matInput  type="email" [(ngModel)]="player.email" name="email">
+    </mat-form-field>
+    
+  
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

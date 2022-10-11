@@ -1,0 +1,38 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title class="text-center">Add Tournament</h1>
+<div mat-dialog-content>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Name  </mat-label>
+        <input matInput [(ngModel)]="tournois.nom" name="nom">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Address  </mat-label>
+        <input matInput [(ngModel)]="tournois.adresse" name="tournois.adresse">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label> Date</mat-label>
+        <input matInput [matDatepicker]="picker" format="dd-MM-yy" [(ngModel)]="tournois.date" name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+    
+
+   
+    
+   <!--  <div class="input-group mb-3">
+        <input type="file" class="form-control"   id="inputGroupFile01">
+    </div> -->
+</div>
+<mat-dialog-actions >
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

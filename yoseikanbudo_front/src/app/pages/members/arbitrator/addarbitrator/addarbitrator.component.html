@@ -1,0 +1,48 @@
+<form  (ngSubmit)="OnSubmit()">
+    <h1 mat-dialog-title class="text-center">Add arbitrator</h1>
+<div mat-dialog-content>
+
+ 
+
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  arbitrator FirstName  </mat-label>
+        <input matInput [(ngModel)]="arbitre.name" name="name">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  arbitrator LastName   </mat-label>
+        <input matInput  [(ngModel)]="arbitre.prenom" name="prenom">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > arbitrator Grade  </mat-label>
+        <input matInput   [(ngModel)]="arbitre.grade" name="grade">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  arbitrator Cote  </mat-label>
+        <input matInput [(ngModel)]="arbitre.cote" name="cote">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  arbitrator Phone  </mat-label>
+        <input matInput type="tel" [(ngModel)]="arbitre.phone" name="phone">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label > arbitrator Email  </mat-label>
+        <input matInput  type="email" [(ngModel)]="arbitre.email" name="email">
+    </mat-form-field>
+    
+  
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+

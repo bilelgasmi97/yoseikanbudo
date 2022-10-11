@@ -1,0 +1,263 @@
+<button class="addbtn01" mat-fab style="background-color:var(--main-color)" (click)="openDialog()" aria-label="Example icon button with a menu icon">
+   
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <strong>Coaches</strong>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort >
+  
+    
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.nom}}  </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+        <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="email_ent">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email_ent}} </td>
+      </ng-container>
+      
+
+       <!-- Update Column -->
+       <ng-container matColumnDef="action">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+           <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="openDialog2(row)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteCoach(row.product_id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+       </ng-container>
+
+      
+
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{<input type="text">.value}}"</td>
+      </tr>
+
+      
+    </table>
+
+   
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20 , 25]" aria-label="Select page of users"></mat-paginator>
+  </div>
+
+
+<!--  ******************** Players ********************** -->
+  
+
+<div class="players">
+
+  <button class="addbtn02" mat-fab style="background-color:var(--main-color)" (click)="openDialog03()" aria-label="Example icon button with a menu icon">
+   
+    <mat-icon>add</mat-icon>
+  </button> 
+  
+  <strong>Players</strong>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource02" matSort class="tab02">
+
+    
+      <!-- ID Column -->
+      <ng-container matColumnDef="id_joueur">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id_joueur}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}}  </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.prenom}} </td>
+      </ng-container>
+      
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="date_naissance">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Birth Date </th>
+        <td mat-cell *matCellDef="let row"> {{row.date_naissance}} </td>
+      </ng-container>
+
+       <!-- Fruit Column -->
+       <ng-container matColumnDef="equipe">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Team </th>
+        <td mat-cell *matCellDef="let row"> {{row.equipe.nom_eq}} </td>
+      </ng-container>
+
+       <!-- Fruit Column -->
+       <ng-container matColumnDef="adresse">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+        <td mat-cell *matCellDef="let row"> {{row.adresse}} </td>
+      </ng-container>
+
+       <!-- Fruit Column -->
+       <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+        <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+      
+  
+       <!-- Update Column -->
+       <ng-container matColumnDef="action">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+           <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="openDialog04(row)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteplayer(row.id_joueur)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+       </ng-container>
+  
+      
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns02"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns02;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{<input type="text">.value}}"</td>
+      </tr>
+  
+      
+    </table>
+  
+   
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" aria-label="Select page of users"></mat-paginator>
+  </div>
+  
+
+</div>
+
+
+<!--  ********************* arbitrator ******************** -->
+
+<div class="players">
+
+  <button class="addbtn02" mat-fab style="background-color:var(--main-color)" (click)="openDialog05()" aria-label="Example icon button with a menu icon">
+   
+    <mat-icon>add</mat-icon>
+  </button>
+  
+  <strong>Arbitrators</strong>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource03" matSort class="tab02">
+
+    
+      <!-- ID Column -->
+      <ng-container matColumnDef="id_arbitre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id_arbitre}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}}  </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.prenom}} </td>
+      </ng-container>
+      
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="grade">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+        <td mat-cell *matCellDef="let row"> {{row.grade}} </td>
+      </ng-container>
+
+       <!-- Fruit Column -->
+       <ng-container matColumnDef="cote">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cote </th>
+        <td mat-cell *matCellDef="let row"> {{row.cote}} </td>
+      </ng-container>
+
+
+       <!-- Fruit Column -->
+       <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+        <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+      
+  
+       <!-- Update Column -->
+       <ng-container matColumnDef="action">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+           <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="openDialog06(row)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteArbitre(row.id_arbitre)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+       </ng-container>
+  
+      
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns03"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns03;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{<input type="text">.value}}"</td>
+      </tr>
+  
+      
+    </table>
+  
+   
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" aria-label="Select page of users"></mat-paginator>
+  </div>
+  
+
+</div>

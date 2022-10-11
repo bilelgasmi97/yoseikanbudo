@@ -1,0 +1,73 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add Team</h1>
+<div mat-dialog-content>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Name  </mat-label>
+        <input matInput [(ngModel)]="team.nom_eq" name="nom_eq">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Cote  </mat-label>
+        <input matInput [(ngModel)]="team.cote" name="cote">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Precident  </mat-label>
+        <input matInput [(ngModel)]="team.precident_eq" name="precident_eq">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Email  </mat-label>
+        <input matInput [(ngModel)]="team.email" name="email">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   fax  </mat-label>
+        <input matInput [(ngModel)]="team.fax" name="fax">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Phone  </mat-label>
+        <input matInput [(ngModel)]="team.phone" name="phone">
+    </mat-form-field>
+
+    
+        <mat-form-field  appearance="outline">
+            <mat-label> Coach</mat-label>
+            <mat-select  [(ngModel)]="team.entraineur" name="entraineur">
+                <mat-option  *ngFor="let coac of coachs"   [value]="coac" > {{coac.nom}} </mat-option>
+            </mat-select>
+        </mat-form-field>
+     
+    
+
+   
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Papier  </mat-label>
+        <input matInput [(ngModel)]="team.papier" name="papier">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >   Remarque  </mat-label>
+        <input matInput [(ngModel)]="team.remarque" name="remarque">
+    </mat-form-field>
+
+  
+
+   
+
+    <mat-dialog-actions>
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+    </mat-dialog-actions>
+
+</div>
+
+
+
+</form>
+
+
+

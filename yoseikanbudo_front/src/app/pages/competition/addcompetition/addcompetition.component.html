@@ -1,0 +1,84 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add Competition</h1>
+<div mat-dialog-content>
+
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Nblanc  </mat-label>
+        <input matInput [(ngModel)]="combat.nblanc" name="nblanc">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Cblanc  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.cblanc" name="cblanc">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Nbleu  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.nbleu" name="nbleu">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Cbleu  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.cbleu" name="cbleu">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  gang  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.gang" name="gang">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Cgang  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.cgang" name="cgang">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Perd  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.perd" name="perd">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Cperd  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.cperd" name="cperd">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  gposit  </mat-label>
+        <input matInput type="number" [(ngModel)]="combat.gposit" name="gposit">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  pposit  </mat-label>
+        <input matInput type="number" [(ngModel)]="combat.pposit" name="pposit">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  Obs </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.obs" name="obs">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  id_tr  </mat-label>
+        <input matInput type="text" [(ngModel)]="combat.id_tr" name="id_tr">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  posit  </mat-label>
+        <input matInput type="number" [(ngModel)]="combat.posit" name="posit">
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label >  tableau  </mat-label>
+        <input matInput type="number" [(ngModel)]="combat.tableau" name="tableau">
+    </mat-form-field>
+
+  
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>

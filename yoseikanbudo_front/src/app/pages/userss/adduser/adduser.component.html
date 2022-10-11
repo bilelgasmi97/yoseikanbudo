@@ -1,0 +1,88 @@
+<form  (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Add User Account</h1>
+
+<div mat-dialog-content>
+
+    <div class="input-group mb-3">
+        <mat-form-field  appearance="outline">
+            <mat-label >First Name</mat-label>
+            <input matInput [(ngModel)]="user.user_name" name="user_name" placeholder="user Name">
+        </mat-form-field>
+    </div>
+        <mat-form-field  appearance="outline">
+          <mat-label >Last Name </mat-label>
+          <input matInput [(ngModel)]="user.user_lastname" name="user_lastname">
+        </mat-form-field>
+
+        <mat-form-field  appearance="outline">
+            <mat-label >Email </mat-label>
+            <input matInput type="email" [(ngModel)]="user.user_email" name="user_email">
+          </mat-form-field>
+
+          <mat-form-field  appearance="outline">
+            <mat-label [(ngModel)]="user.user_lastname" name="user_lastname">Password</mat-label>
+            <input matInput type="password" [(ngModel)]="user.user_password" name="user_password">
+          </mat-form-field>      
+
+          <mat-form-field  appearance="outline">
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>+216 &nbsp;</span>
+            <input type="tel" matInput [(ngModel)]="user.user_phone" name="user_phone" >
+          </mat-form-field>
+    
+      
+        <mat-form-field  appearance="outline">
+          <mat-label>Address</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+
+        <div class="input-group mb-3">
+
+            <mat-form-field appearance="outline">
+                <mat-label> Date Of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" format="dd-MM-yy" [(ngModel)]="user.user_birthday" name="user_birthday">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        </div>  
+    
+
+
+
+    <div class="input-group mb-3">
+    
+            <mat-form-field  appearance="outline">
+            <mat-label>User Type</mat-label>
+            <mat-select  [(ngModel)]="user.user_type" name="user_type">
+                <mat-option  *ngFor="let ut of usert"   [value]="ut" > {{ut.type}} </mat-option>
+            </mat-select>
+            
+            </mat-form-field>
+         
+    </div>
+
+    <div class="input-group mb-3">
+    
+        <mat-form-field  appearance="outline">
+        <mat-label>Team</mat-label>
+        <mat-select  [(ngModel)]="user.user_team" name="user_team">
+            <mat-option  *ngFor="let team of teams"   [value]="team" > {{team.nom_eq}} </mat-option>
+        </mat-select>
+        
+        </mat-form-field>
+        
+</div>
+
+   
+ 
+</div>
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true"  type="submit">Add</button>
+</mat-dialog-actions>
+
+
+</form>
+
+
+

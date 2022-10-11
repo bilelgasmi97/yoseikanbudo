@@ -1,0 +1,103 @@
+<button class="addbtn" mat-fab style="background-color:var(--main-color)" (click)="openDialog()" aria-label="Example icon button with a menu icon">
+   
+    <mat-icon>add</mat-icon>
+  </button> 
+
+<div class="chat-message">
+    <div class="chat-menu">
+        <div class="search-wrapper">
+            <input type="text">
+        </div>
+        
+            <mat-selection-list #shoes  [multiple]="false">
+                <mat-list-option *ngFor="let user of users" [value]="user.user_name" [value]="user.user_lastname"
+                 >
+                    <div class="friends">
+                        <img src="./assets/admin.jpg" width="40px" height="40px" alt="">
+                        <ul class="friends-data" (click)="getusername(user.user_name)">
+                            <li class="head"  >
+                                {{user.user_name }}
+                                {{user.user_lastname }} 
+                            </li>
+                            <li>
+                                <span>{{user.user_type.type}}</span>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </mat-list-option>
+              </mat-selection-list>
+        <div class="chatroom-footer">
+
+        </div>
+        
+    </div>
+    <div class="chat-box">
+        <div class="chat-box-header">
+            <img src="./assets/admin.jpg" width="40px" height="40px" alt="">
+            <ul>
+                <li>
+                    {{shoes.selectedOptions.selected[0]?.value}}
+                </li>
+                <li>
+                    <span>3 hours ago</span> 
+                </li>
+            </ul> 
+            
+        </div>
+        <div class="chat-box-message">
+            <div class="box-message">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item "  *ngIf="username!=null" >
+                            <div class="titi" *ngFor="let msg of chatmsgs">
+                                <strong *ngIf="msg.sender == 'Admin'" style="color: var(--main-color);">{{msg.sender}} : </strong>
+                                <strong *ngIf="msg.sender != 'Admin'" style="color: var(--orange-color);">{{msg.sender}} : </strong>
+                                 <span>{{msg.content}}</span>
+                            </div>
+                            
+                    </li> 
+                     <li class="list-group-item "  *ngIf="username==null" >
+                        <div class="titi" *ngFor="let msd of wsseve.chatMessages">
+                            <strong >{{msd.user}} : </strong>
+                            <span>{{msd.message}}</span> 
+                        </div>
+                        
+                    </li>  
+                </ul>
+            </div>
+            
+        </div>
+            
+                <form (ngSubmit)="onSubmit(msgform)" #msgform="ngForm">
+                    <div class="action" >
+                        <input type="text" placeholder="send message !!!" name="message" id="message" ngModel>
+                        <button type="submit"> <mat-icon color="primary">send</mat-icon></button>
+                     </div>
+                 </form>
+            
+       
+    </div>
+
+    <div class="chatroom">
+        <div class="chatroom-header">
+  
+        </div>
+       <h2>
+        Creat and Join a Chatroom
+        comunicate with your Team anonymously
+        
+       </h2>
+       <h3>
+        add a nickname ! 
+       </h3>
+       <form (ngSubmit)="onSubmit02(userform)" #userform="ngForm">
+        <input type="text" name="user" ngModel>
+        <button type="submit">creat chatroom</button>
+       </form>
+       <div class="chatroom-footer">
+  
+    </div>
+        
+    </div>
+
+</div>
